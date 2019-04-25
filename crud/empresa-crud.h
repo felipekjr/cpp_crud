@@ -1,6 +1,13 @@
-#include "empresa.h"
+#ifndef EMPRESA_CRUD_H
+#define EMPRESA_CRUD_H
 
+#include <iostream>
+
+using namespace std;
 void criarEmpresa();
-void adicionarFuncionarios(Empresa empresa);
-list<Funcionario> listarFuncionarios(Empresa empresa);
+void adicionarFuncionarios();
+void listarFuncionarios();
+void aplicarAumento();
+void listarMediaFuncionarios();
 
+#endif
