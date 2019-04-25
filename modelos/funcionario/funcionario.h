@@ -27,3 +27,5 @@ Funcionario:: Funcionario(string nome, double salario, date dataAdmissao){
 }
 Funcionario::~Funcionario(){
 }
+
+#endif

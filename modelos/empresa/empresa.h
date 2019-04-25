@@ -29,3 +29,5 @@ Empresa::Empresa(string nome, string cnpj, list<Funcionario> funcionarios){
 }
 Empresa::~Empresa(){
 }
+
+#endif
