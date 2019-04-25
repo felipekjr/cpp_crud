@@ -20,7 +20,7 @@ Funcionario::Funcionario(){
     dataAdmissao = ""
 }
 
-Funcionario:: Funcionario(string nome, double salario, date dataAdmissao){
+Funcionario::Funcionario(string nome, double salario, date dataAdmissao){
     nome = nome;
     salario = salario;
     dataAdmissao = dataAdmissao

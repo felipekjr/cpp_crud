@@ -2,9 +2,10 @@
 #define EMPRESA_CRUD_H
 
 #include <iostream>
-
+#include <ctime>
+#include "../modelos/empresa/empresa.h"
 using namespace std;
-void criarEmpresa();
+Empresa criarEmpresa();
 void adicionarFuncionarios();
 void listarFuncionarios();
 void aplicarAumento();

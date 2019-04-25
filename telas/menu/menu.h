@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "../../crud/empresa-crud.h"
+#include "../../modelos/empresa.h"
 using namespace std;
 void iniciarMenu();
 

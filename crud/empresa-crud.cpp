@@ -1,10 +1,23 @@
 #include "empresa-crud.h"
 
-void criarEmpresa(){
-    cout << "Criar Empresa:";
+Empresa criarEmpresa(){
+    string nome, cnpj;
+    cout << "Criar Empresa:\n Nome:" << endl;
+    cin >> nome;
+    cout << "CNPJ:" << endl;
+    cin >> cnpj
+    Empresa empresa = Empresa(nome, cnpj);
+    return empresa;
 }
 
-void adicionarFuncionarios(){
+list<Empresa> adicionarFuncionarios(Empresa empresa, Funcionario funcionario){
+    list<Empresa> empresas;
+    cout << "SELECIONE A EMPRESA: " << endl;
+
+
+
+
+    return empresas
 
 }
 

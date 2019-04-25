@@ -5,16 +5,26 @@ void iniciarMenu(){
     cout << "Bem vindo!" << endl;
     cin >> option;
 
+    List<Empresa> empresas;
+    List<Funcionario> funcionarios;
     switch(option){
-        case 1: criarEmpresa();
+        case 1:
+            Empresa empresa = criarEmpresa();
+            empresas.insert(empresa).
             break;
-        case 2: adicionarFuncionarios();
+        case 2:
+            Funcionario funcionario = criarFuncionario();
+            funcionarios.insert(funcionario);
+            empresas = adicionarFuncionario(empresas, funcionario);
             break;
-        case 3: listarFuncionarios(); 
+        case 3:
+            listarFuncionarios(empresas);
             break;
-        case 4: aplicarAumento();
+        case 4:
+            empresas = aplicarAumento(empresas);
             break;        
-        case 5: listarMediaFuncionarios();
+        case 5:
+            listarMediaFuncionarios(empresas);
             break;
         default: break;
     }
