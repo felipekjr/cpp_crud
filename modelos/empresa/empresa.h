@@ -4,6 +4,7 @@
 
 class Empresa{
     private:
+    int id;
     string nome;
     string cnpj;
     list<Funcionario> funcionarios;
