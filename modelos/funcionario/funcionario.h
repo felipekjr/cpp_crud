@@ -1,31 +1,59 @@
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
+
 #include <string>
+using namespace std;
 
 class Funcionario {
     private:
+        int id;
         string nome;
         double salario;
         date dataAdmissao;
     public:
         Funcionario();
         Funcionario(string nome, double salario, date dataAdmissao);
-        getNome(){return this->nome;};
-        setNome(string nome){this->nome = nome};
+        ~Funcionario();
+        int getId(){
+            return this->id;
+        };
+        void setId(int id){
+            this->id = id;
+        };
+        string getNome(){
+            return this->nome;
+        };
+        void setNome(string nome){
+            this->nome = nome;
+        };        
+        double getSalario(){
+            return this->salario;
+        };
+        void setSalario(double salario){
+            this->salario = salario;
+        };
+        date getDataAdmissao(){
+            return this->dataAdmissao;
+        };      
+        void setDataAdmissao(date dataAdmissao){
+            this->dataAdmissao = dataAdmissao;
+        };
+       
 }
 
 Funcionario::Funcionario(){
-    nome = "";
-    salario = 0.0;
-    dataAdmissao = ""
-}
+    this->nome = "";
+    this->salario = 0.0;
+    this->dataAdmissao = "";
+};
 
 Funcionario::Funcionario(string nome, double salario, date dataAdmissao){
-    nome = nome;
-    salario = salario;
-    dataAdmissao = dataAdmissao
-}
+    this->nome = nome;
+    this->salario = salario;
+    this->dataAdmissao = dataAdmissao;
+};
+
 Funcionario::~Funcionario(){
-}
+};
 
 #endif

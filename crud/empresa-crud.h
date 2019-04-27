@@ -2,7 +2,6 @@
 #define EMPRESA_CRUD_H
 
 #include <iostream>
-#include <ctime>
 #include "../modelos/empresa/empresa.h"
 using namespace std;
 Empresa criarEmpresa();

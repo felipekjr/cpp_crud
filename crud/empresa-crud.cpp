@@ -5,52 +5,59 @@ Empresa criarEmpresa(){
     cout << "Criar Empresa:\n Nome:" << endl;
     cin >> nome;
     cout << "CNPJ:" << endl;
-    cin >> cnpj
+    cin >> cnpj;
     Empresa empresa = Empresa(nome, cnpj);
     return empresa;
 }
 
-list<Empresa> adicionarFuncionario(list<Empresa> empresas, Funcionario funcionario){
-    list<Empresa> empresasAtualizar;
-    int option;
-    cout << "SELECIONE A EMPRESA: " << endl;
-    // listar empresas id - nome
-    cin >> option;
-    for (int i = 0; i < empresas.size(); i++){
-        if(empresa[i].getId() === option){
-            empresa[i].adicionarFuncionario(funcionario);
+void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){   
+    Empresa empresaEscolhida = escolherEmpresa(empresas);
+    empresaEscolhida.inserirFuncionario(funcionario);
+    for (list<Empresa>::iterator i=empresas.begin(); i!= empresas.end(); ++i ){
+        if(i->getCnpj() == empresaEscolhida.getCnpj()){
+            empresas.erase(i);
+            empresas.insert(i, empresaEscolhida);
         }
     }
-    return empresas;
-
 }
 
 void listarFuncionarios(list<Empresa> empresas){
-        Empresa empresaEscolhida;
-        int option;
-        cout << "SELECIONE A EMPRESA: " << endl;
-        // listar empresas id - nome
-        cin >> option;
-    for(i=0; i<empresas.size() i++){
-        if(empresas[i].getId() === option){
-            empresaEscolhida = empresas[i];
-        }
-    }
-    for(j=0; j<empresaEscolhida.getFuncionarios().size(); i++){
+    Empresa empresaEscolhida = escolherEmpresa(empresas);
+    for(int i=0; i<empresaEscolhida.getTotalFuncionarios(); i++){
         cout << "print funcionarios";
     }
 }
 
-void aplicarAumento(){
-
-
+void aplicarAumento(list<Empresa> &empresas){
+    double aumento = 0.0;
+    cout << "AUMENTO: " << endl;
+    cin >> aumento;
+    Empresa empresaEscolhida = escolherEmpresa(empresas);
+    list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
+    for (list<Funcionario>::iterator it = funcionarios.begin(); it!=funcionarios.end(); ++it){
+        it->setSalario(it->getSalario * aumento);        
+    }
 }
 
 void listarMediaFuncionarios(){
 
 }
 
-private void listarEmpresas(list<Empresa> empresas){
-    cout << "SELECIONE A EMPRESA: " << endl;
-    // listar empresas id - nome
+Empresa escolherEmpresa(list<Empresa> empresas){
+    Empresa empresa;
+    string nome;
+    do {
+        cout << "SELECIONE A EMPRESA: " << endl;
+        //listar sobrecarregando  
+        cin >> nome;
+        for(list<Empresa>::iterator it=empresas.begin(); it!= empresas.end(); ++it){
+            if(it->getNome() == nome){
+                empresa = *it;
+            }
+        }        
+        if(!empresa.getNome().size()){
+            cout << "Empresa inválida!" << endl;
+        }
+    }while(empresa.getNome().size());  
+    return empresa;
 }
