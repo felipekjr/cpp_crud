@@ -1,5 +1,5 @@
-#ifndef EMPRESA_CRUD_H
-#define EMPRESA_CRUD_H
+#ifndef FUNCIONARIO_CRUD_H
+#define FUNCIONARIO_CRUD_H
 
 #include <iostream>
 #include "../modelos/funcionario/funcionario.h"

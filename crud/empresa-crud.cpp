@@ -35,11 +35,11 @@ void aplicarAumento(list<Empresa> &empresas){
     Empresa empresaEscolhida = escolherEmpresa(empresas);
     list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
     for (list<Funcionario>::iterator it = funcionarios.begin(); it!=funcionarios.end(); ++it){
-        it->setSalario(it->getSalario * aumento);        
+        it->setSalario(it->getSalario() * aumento);        
     }
 }
 
-void listarMediaFuncionarios(){
+void listarMediaFuncionarios(list<Empresa> empresas){
 
 }
 

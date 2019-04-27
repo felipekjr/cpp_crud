@@ -6,7 +6,9 @@
 #include <list>
 #include <set>
 #include "../../crud/empresa-crud.h"
-#include "../../modelos/empresa.h"
+#include "../../crud/funcionario-crud.h"
+#include "../../modelos/empresa/empresa.h"
+#include "../../modelos/funcionario/funcionario.h"
 
 using namespace std;
 void iniciarMenu();
