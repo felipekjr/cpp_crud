@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "../modelos/funcionario/funcionario.h"
+#include "../colors.h"
 using namespace std;
 Funcionario criarFuncionario();
 

@@ -3,7 +3,7 @@
 Funcionario criarFuncionario() {
     string nome, dataAdmissao;
     double salario = 0.0;
-    cout << "--- FUNCIONÁRIO ---" << endl;
+    cout << CYAN<<"--- FUNCIONÁRIO ---"<<RESET<< endl;
     cout << "- nome: ";
     cin >> nome;
     cout << "- salário: ";

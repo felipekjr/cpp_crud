@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <algorithm>
 #include "../funcionario/funcionario.h"
 using namespace std;
 class Empresa{
@@ -54,7 +55,7 @@ class Empresa{
 
     //sobrecarga de operadores:
     Empresa& operator= (Empresa const &e);
-    friend ostream& operator<< (ostream &o, Empresa const e);
+    friend ostream& operator<< (ostream &o, Empresa const e);    
 
     
 };

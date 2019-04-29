@@ -12,23 +12,22 @@ void iniciarMenu(){
                 Empresa empresa = criarEmpresa();
                 empresas.push_back(empresa);  
                 cout << empresa;
-                cout << "Empresa cadastrada com sucesso!" << endl;     
+                mensagemSucesso("Empresa cadastrada com sucesso!");  
                 break;
             }
                 
             case 2: {
                 Funcionario funcionario = criarFuncionario();
                 adicionarFuncionario(empresas, funcionario);
-                funcionarios.push_back(funcionario);               
-                cout << "Funcionário adicionado com sucesso!" << endl;
+                funcionarios.push_back(funcionario);
+                mensagemSucesso("Funcionário adicionado com sucesso!");
                 break;
             }                
             case 3:
                 listarFuncionarios(empresas);
                 break;
             case 4:
-                aplicarAumento(empresas);
-                cout << "Aumento aplicado com sucesso!" << endl;
+                aplicarAumento(empresas);               
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);
@@ -41,7 +40,7 @@ void iniciarMenu(){
 int escolherOpcao(){
     set<int> options = {0,1,2,3,4,5,6};
     int op;
-    cout << "--- MENU PRINCIPAL ---" << endl;
+    cout <<CYAN<< "--- MENU PRINCIPAL ---"<<RESET<< endl;
     cout << "1 - criar empresa" << endl;
     cout << "2 - adicionar funcionaro" << endl;
     cout << "3 - listar funcionarios" << endl;
@@ -56,4 +55,8 @@ int escolherOpcao(){
         cout << "Opção inválida!" << endl;
         return -1;
     }
+}
+
+void mensagemSucesso(string mensagem){
+    cout << GREEN << mensagem << RESET << endl;
 }
