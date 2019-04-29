@@ -48,9 +48,9 @@ class Empresa{
     void inserirFuncionario(Funcionario funcionario){
         this->funcionarios.push_back(funcionario);
     };
-    void removerFuncionario(Funcionario funcionario){
-        this->funcionarios.remove(funcionario);
-    };
+    // void removerFuncionario(Funcionario funcionario){
+    //     this->funcionarios.remove(funcionario);
+    // };
 
     //sobrecarga de operadores:
     Empresa& operator= (Empresa const &e);

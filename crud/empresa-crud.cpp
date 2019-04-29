@@ -13,17 +13,17 @@ Empresa criarEmpresa(){
 }
 
 void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){      
-    // Empresa empresaEscolhida = escolherEmpresa(empresas);    
-    // cout << funcionario;
-    // empresaEscolhida.inserirFuncionario(funcionario);        
-    //  for (auto const& empresa : empresas) {
-    //      if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-    //          cout << empresa;
-    //         // empresas.erase(empresa);
-    //         // empresas.insert(empresa, empresaEscolhida);            
-    //     }
+    Empresa empresaEscolhida = escolherEmpresa(empresas);    
+    cout << funcionario;
+    empresaEscolhida.inserirFuncionario(funcionario);        
+     for (auto &empresa : empresas) {
+         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
+             cout << empresa;
+            // empresas.erase(empresa);
+            // empresas.insert(empresa, empresaEscolhida);            
+        }
             
-    // }
+    }
 }
 
 void listarFuncionarios(list<Empresa> empresas){
@@ -54,14 +54,14 @@ Empresa escolherEmpresa(list<Empresa> empresas){
     string nome;
     do {
         cout << "--- SELECIONE A EMPRESA ---" << endl;        
-        for (auto const& empresa : empresas) {
+        for (auto & empresa : empresas) {
             cout << empresa;
         }
         cout << "empresa: ";
         cin >> nome;
-        for (auto const& empresa : empresas) {
+        for (auto & empresa : empresas) {
             if(empresa.getNome() == nome){
-                empresaEscolhida = empresa
+                empresaEscolhida = empresa;
             }            
         }               
         if(!empresaEscolhida.getNome().size()){

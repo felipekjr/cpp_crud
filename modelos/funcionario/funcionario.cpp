@@ -5,7 +5,7 @@ Funcionario::Funcionario(string nome, double salario, string dataAdmissao){
     this->dataAdmissao = dataAdmissao;
 }
 
-Funcionario& Funcionario::operator =(Funcionario const &f){
+Funcionario& Funcionario::operator= (Funcionario const &f){
     this->nome =f.nome;
     this->salario = f.salario;
     this->dataAdmissao = f.dataAdmissao;
