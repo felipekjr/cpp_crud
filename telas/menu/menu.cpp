@@ -3,8 +3,8 @@
 void iniciarMenu(){
     int option;
     cout << "Bem vindo!" << endl;
-    vector<Empresa> empresas;
-    vector<Funcionario> funcionarios;
+    list<Empresa> empresas;
+    list<Funcionario> funcionarios;
     do{        
         option = escolherOpcao();       
         switch(option){
@@ -30,9 +30,8 @@ void iniciarMenu(){
                 listarMediaFuncionarios(empresas);
                 break;
             default: break;
-        }
-        cout << empresas[0].getNome() << endl;
-    }while(option != 0);
+        }       
+    }while(option != 0);    
 }
 
 int escolherOpcao(){

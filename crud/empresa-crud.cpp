@@ -10,10 +10,10 @@ Empresa criarEmpresa(){
     return empresa;
 }
 
-void adicionarFuncionario(vector<Empresa> &empresas, Funcionario funcionario){   
+void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){   
     Empresa empresaEscolhida = escolherEmpresa(empresas);
     empresaEscolhida.inserirFuncionario(funcionario);
-    for (vector<Empresa>::iterator i=empresas.begin(); i!= empresas.end(); ++i ){
+    for (list<Empresa>::iterator i=empresas.begin(); i!= empresas.end(); ++i ){
         if(i->getCnpj() == empresaEscolhida.getCnpj()){
             empresas.erase(i);
             empresas.insert(i, empresaEscolhida);
@@ -21,36 +21,36 @@ void adicionarFuncionario(vector<Empresa> &empresas, Funcionario funcionario){
     }
 }
 
-void listarFuncionarios(vector<Empresa> empresas){
+void listarFuncionarios(list<Empresa> empresas){
     Empresa empresaEscolhida = escolherEmpresa(empresas);
     for(int i=0; i<empresaEscolhida.getTotalFuncionarios(); i++){
         cout << "print funcionarios";
     }
 }
 
-void aplicarAumento(vector<Empresa> &empresas){
+void aplicarAumento(list<Empresa> &empresas){
     double aumento = 0.0;
     cout << "AUMENTO: " << endl;
     cin >> aumento;
     Empresa empresaEscolhida = escolherEmpresa(empresas);
-    vector<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
-    for (vector<Funcionario>::iterator it = funcionarios.begin(); it!=funcionarios.end(); ++it){
+    list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
+    for (list<Funcionario>::iterator it = funcionarios.begin(); it!=funcionarios.end(); ++it){
         it->setSalario(it->getSalario() * aumento);        
     }
 }
 
-void listarMediaFuncionarios(vector<Empresa> empresas){
+void listarMediaFuncionarios(list<Empresa> empresas){
 
 }
 
-Empresa escolherEmpresa(vector<Empresa> empresas){
+Empresa escolherEmpresa(list<Empresa> empresas){
     Empresa empresa;
     string nome;
     do {
         cout << "SELECIONE A EMPRESA: " << endl;
-        //vectorar sobrecarregando  
+        //listar sobrecarregando  
         cin >> nome;
-        for(vector<Empresa>::iterator it=empresas.begin(); it!= empresas.end(); ++it){
+        for(list<Empresa>::iterator it=empresas.begin(); it!= empresas.end(); ++it){
             if(it->getNome() == nome){
                 empresa = *it;
             }

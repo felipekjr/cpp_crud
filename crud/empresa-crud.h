@@ -6,10 +6,10 @@
 using namespace std;
 
 Empresa criarEmpresa();
-Empresa escolherEmpresa(vector<Empresa> empresas);
-void adicionarFuncionario(vector<Empresa> &empresa, Funcionario funcionario);
-void listarFuncionarios(vector<Empresa> empresas);
-void aplicarAumento(vector<Empresa> &empresas);
-void listarMediaFuncionarios(vector<Empresa> empresas);
+Empresa escolherEmpresa(list<Empresa> empresas);
+void adicionarFuncionario(list<Empresa> &empresa, Funcionario funcionario);
+void listarFuncionarios(list<Empresa> empresas);
+void aplicarAumento(list<Empresa> &empresas);
+void listarMediaFuncionarios(list<Empresa> empresas);
 
 #endif

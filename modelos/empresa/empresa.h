@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include <list>
 #include "../funcionario/funcionario.h"
 using namespace std;
 class Empresa{
@@ -11,7 +11,7 @@ class Empresa{
     int id;
     string nome;
     string cnpj;
-    vector<Funcionario> funcionarios;
+    list<Funcionario> funcionarios;
 
     public:
     //construores & destrutores
@@ -37,7 +37,7 @@ class Empresa{
     void setCnpj(std::string cnpj){
         this->cnpj = cnpj;
     };
-    vector<Funcionario> getFuncionarios() {
+    list<Funcionario> getFuncionarios() {
         return this->funcionarios;
     }; 
 
