@@ -1,5 +1,5 @@
 PROG = cpp_crud! 
-CC = g++
+CC = g++ -std=c++11
 FLAGS = -O -g -Wall
 OBJS =  main.o menu.o empresa.o funcionario.o empresa-crud.o funcionario-crud.o
 MENU_PATH = ./telas/menu

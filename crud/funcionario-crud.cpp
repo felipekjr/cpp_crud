@@ -8,7 +8,7 @@ Funcionario criarFuncionario() {
     cin >> nome;
     cout << "- salário: ";
     cin >> salario;
-    cout << "- data de admissão: ";
+    cout << "- data de admissão (dd-mm-yyyy): ";
     cin >> dataAdmissao;
     Funcionario funcionario = Funcionario(nome, salario, dataAdmissao);
     return funcionario;

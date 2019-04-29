@@ -1,6 +1,7 @@
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
 
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -37,6 +38,10 @@ class Funcionario{
         void setDataAdmissao(string dataAdmissao){
             this->dataAdmissao = dataAdmissao;
         };
+
+        //sobrecarga de operadores:
+        Funcionario& operator= (Funcionario const &f);
+        friend ostream& operator<< (ostream &o, Funcionario const f);
        
 };
 

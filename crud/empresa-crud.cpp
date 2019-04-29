@@ -2,23 +2,28 @@
 
 Empresa criarEmpresa(){
     string nome, cnpj;
-    cout << "Criar Empresa:\n Nome:" << endl;
+    cout << "--- CRIAR EMPRESA ---" << endl;
+    cout << "- nome: ";
+    // TODO: ler espaço em branco
     cin >> nome;
-    cout << "CNPJ:" << endl;
+    cout << "- cnpj: ";
     cin >> cnpj;
     Empresa empresa = Empresa(nome, cnpj);
     return empresa;
 }
 
 void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){      
-    Empresa empresaEscolhida = escolherEmpresa(empresas);
-    empresaEscolhida.inserirFuncionario(funcionario);
-    for (list<Empresa>::iterator i =empresas.begin(); i!= empresas.end(); ++i ){
-        if(i->getCnpj() == empresaEscolhida.getCnpj()){
-            empresas.erase(i);
-            empresas.insert(i, empresaEscolhida);            
-        }
-    }
+    // Empresa empresaEscolhida = escolherEmpresa(empresas);    
+    // cout << funcionario;
+    // empresaEscolhida.inserirFuncionario(funcionario);        
+    //  for (auto const& empresa : empresas) {
+    //      if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
+    //          cout << empresa;
+    //         // empresas.erase(empresa);
+    //         // empresas.insert(empresa, empresaEscolhida);            
+    //     }
+            
+    // }
 }
 
 void listarFuncionarios(list<Empresa> empresas){
@@ -45,21 +50,24 @@ void listarMediaFuncionarios(list<Empresa> empresas){
 
 Empresa escolherEmpresa(list<Empresa> empresas){
     string continuar;
-    Empresa empresa;
+    Empresa empresaEscolhida;
     string nome;
     do {
-        cout << "- empresa: " << endl;
-        //listar sobrecarregando  
+        cout << "--- SELECIONE A EMPRESA ---" << endl;        
+        for (auto const& empresa : empresas) {
+            cout << empresa;
+        }
+        cout << "empresa: ";
         cin >> nome;
-        for(list<Empresa>::iterator it=empresas.begin(); it!= empresas.end(); ++it){
-            if(it->getNome() == nome){
-                empresa = *it;
-            }
-        }        
-        if(!empresa.getNome().size()){
+        for (auto const& empresa : empresas) {
+            if(empresa.getNome() == nome){
+                empresaEscolhida = empresa
+            }            
+        }               
+        if(!empresaEscolhida.getNome().size()){
             cout << "Empresa inválida! Deseja continuar? (S/N)" << endl;           
             cin >> continuar;
         }        
-    }while(continuar == "S" && !empresa.getNome().size());      
-    return empresa;
+    }while(continuar == "S" && !empresaEscolhida.getNome().size());      
+    return empresaEscolhida;
 }

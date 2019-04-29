@@ -10,14 +10,17 @@ void iniciarMenu(){
         switch(option){
             case 1: {
                 Empresa empresa = criarEmpresa();
-                empresas.push_back(empresa);
+                empresas.push_back(empresa);  
+                cout << empresa;
+                cout << "Empresa cadastrada com sucesso!" << endl;     
                 break;
             }
                 
             case 2: {
                 Funcionario funcionario = criarFuncionario();
-                funcionarios.push_back(funcionario);
                 adicionarFuncionario(empresas, funcionario);
+                funcionarios.push_back(funcionario);               
+                cout << "Funcionário adicionado com sucesso!" << endl;
                 break;
             }                
             case 3:
@@ -25,6 +28,7 @@ void iniciarMenu(){
                 break;
             case 4:
                 aplicarAumento(empresas);
+                cout << "Aumento aplicado com sucesso!" << endl;
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);

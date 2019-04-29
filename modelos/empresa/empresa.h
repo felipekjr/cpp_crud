@@ -16,7 +16,7 @@ class Empresa{
     public:
     //construores & destrutores
     Empresa();
-    Empresa(std::string nome, string cnpj);
+    Empresa(string nome, string cnpj);    
     ~Empresa();
     //getters & setters
     int getId(){
@@ -28,13 +28,13 @@ class Empresa{
     string getNome() {
         return this->nome;
     };
-    void setNome(std::string nome) {
+    void setNome(string nome) {
         this->nome = nome;
     };
     string getCnpj() {
         return this->cnpj;
     };
-    void setCnpj(std::string cnpj){
+    void setCnpj(string cnpj){
         this->cnpj = cnpj;
     };
     list<Funcionario> getFuncionarios() {
@@ -46,11 +46,17 @@ class Empresa{
     }
 
     void inserirFuncionario(Funcionario funcionario){
-        // this->funcionarios.push_back(funcionario);
+        this->funcionarios.push_back(funcionario);
     };
     void removerFuncionario(Funcionario funcionario){
-        // this->funcionarios.remove(funcionario);
+        this->funcionarios.remove(funcionario);
     };
+
+    //sobrecarga de operadores:
+    Empresa& operator= (Empresa const &e);
+    friend ostream& operator<< (ostream &o, Empresa const e);
+
+    
 };
 
 
