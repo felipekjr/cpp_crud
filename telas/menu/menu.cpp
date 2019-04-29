@@ -15,7 +15,7 @@ void iniciarMenu(){
             }
                 
             case 2: {
-                Funcionario funcionario = Funcionario("felipe", 2.0, "sasa");
+                Funcionario funcionario = criarFuncionario();
                 funcionarios.push_back(funcionario);
                 adicionarFuncionario(empresas, funcionario);
                 break;
@@ -37,12 +37,13 @@ void iniciarMenu(){
 int escolherOpcao(){
     set<int> options = {0,1,2,3,4,5,6};
     int op;
-    cout << "1 - CRIAR EMPRESA" << endl;
-    cout << "2 - ADICIONAR FUNCIONARIO" << endl;
-    cout << "3 - LISTAR FUNCIONARIOS" << endl;
-    cout << "4 - APLICAR AUMENTO" << endl;
-    cout << "5 - LISTAR MEDIA DE FUNCIONARIOS" << endl;
-    cout << "0 - SAIR"<<endl;
+    cout << "--- MENU PRINCIPAL ---" << endl;
+    cout << "1 - criar empresa" << endl;
+    cout << "2 - adicionar funcionaro" << endl;
+    cout << "3 - listar funcionarios" << endl;
+    cout << "4 - aplicar aumento" << endl;
+    cout << "5 - listar média de funcionários" << endl;
+    cout << "0 - sair"<<endl;
     cin >> op;
     const bool opValida = options.find(op) != options.end();
     if (opValida){

@@ -10,13 +10,13 @@ Empresa criarEmpresa(){
     return empresa;
 }
 
-void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){   
+void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){      
     Empresa empresaEscolhida = escolherEmpresa(empresas);
     empresaEscolhida.inserirFuncionario(funcionario);
-    for (list<Empresa>::iterator i=empresas.begin(); i!= empresas.end(); ++i ){
+    for (list<Empresa>::iterator i =empresas.begin(); i!= empresas.end(); ++i ){
         if(i->getCnpj() == empresaEscolhida.getCnpj()){
             empresas.erase(i);
-            empresas.insert(i, empresaEscolhida);
+            empresas.insert(i, empresaEscolhida);            
         }
     }
 }
@@ -44,10 +44,11 @@ void listarMediaFuncionarios(list<Empresa> empresas){
 }
 
 Empresa escolherEmpresa(list<Empresa> empresas){
+    string continuar;
     Empresa empresa;
     string nome;
     do {
-        cout << "SELECIONE A EMPRESA: " << endl;
+        cout << "- empresa: " << endl;
         //listar sobrecarregando  
         cin >> nome;
         for(list<Empresa>::iterator it=empresas.begin(); it!= empresas.end(); ++it){
@@ -56,8 +57,9 @@ Empresa escolherEmpresa(list<Empresa> empresas){
             }
         }        
         if(!empresa.getNome().size()){
-            cout << "Empresa inválida!" << endl;
-        }
-    }while(empresa.getNome().size());  
+            cout << "Empresa inválida! Deseja continuar? (S/N)" << endl;           
+            cin >> continuar;
+        }        
+    }while(continuar == "S" && !empresa.getNome().size());      
     return empresa;
 }
