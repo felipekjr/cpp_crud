@@ -1,22 +1,22 @@
 #ifndef EMPRESA_H
 #define EMPRESA_H
 
+#include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 #include "../funcionario/funcionario.h"
 using namespace std;
-
 class Empresa{
     private:
     int id;
     string nome;
     string cnpj;
-    list<Funcionario> funcionarios;
+    vector<Funcionario> funcionarios;
 
     public:
     //construores & destrutores
     Empresa();
-    Empresa(string nome, string cnpj);
+    Empresa(std::string nome, string cnpj);
     ~Empresa();
     //getters & setters
     int getId(){
@@ -28,16 +28,16 @@ class Empresa{
     string getNome() {
         return this->nome;
     };
-    void setNome(string nome) {
+    void setNome(std::string nome) {
         this->nome = nome;
     };
     string getCnpj() {
         return this->cnpj;
     };
-    void setCnpj(string cnpj){
+    void setCnpj(std::string cnpj){
         this->cnpj = cnpj;
     };
-    list<Funcionario> getFuncionarios() {
+    vector<Funcionario> getFuncionarios() {
         return this->funcionarios;
     }; 
 
@@ -46,25 +46,12 @@ class Empresa{
     }
 
     void inserirFuncionario(Funcionario funcionario){
-        this->funcionarios.push_back(funcionario);
+        // this->funcionarios.push_back(funcionario);
     };
     void removerFuncionario(Funcionario funcionario){
-        this->funcionarios.remove(funcionario);
+        // this->funcionarios.remove(funcionario);
     };
 };
 
-Empresa::Empresa(){
-    this->nome = "";
-    this->cnpj = "";
-    this->funcionarios.empty();
-};
-
-Empresa::Empresa(string nome, string cnpj){
-    this->nome = nome;
-    this->cnpj = cnpj;   
-};
-
-Empresa::~Empresa(){    
-};
 
 #endif

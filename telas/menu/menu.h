@@ -3,14 +3,13 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <list>
 #include <set>
 #include "../../crud/empresa-crud.h"
 #include "../../crud/funcionario-crud.h"
-#include "../../modelos/empresa/empresa.h"
-#include "../../modelos/funcionario/funcionario.h"
+
 
 using namespace std;
+int escolherOpcao();
 void iniciarMenu();
 
 #endif

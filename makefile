@@ -1,21 +1,35 @@
- PROG = cpp_crud! 
- CC = g++
- FLAGS = -O0 -g -Wall
- OBJS = main.o mesa.o jogador.o dado.o
+PROG = cpp_crud! 
+CC = g++
+FLAGS = -O -g -Wall
+OBJS =  main.o menu.o empresa.o funcionario.o empresa-crud.o funcionario-crud.o
+MENU_PATH = ./telas/menu
+EMPRESA_PATH = ./modelos/empresa
+FUNCIONARIO_PATH = ./modelos/funcionario
+CRUD_PATH = ./crud
 
- $(PROG):$(OBJS)
-	$(CC) -o $(PROG) $(OBJS)
-	rm -f *.o
-	./$(PROG)
- all:
+$(PROG):$(OBJS)
+		$(CC) -o $(PROG) $(OBJS)
+		rm -f *.o
+		./$(PROG)
+all:
 	$(PROG)
- main.o:
+main.o:
 	$(CC) $(FLAGS) -c main.cpp
- mesa.o: mesa.h
-	$(CC) $(FLAGS) -c mesa.cpp
- jogador.o: jogador.h
-	$(CC) $(FLAGS) -c jogador.cpp
- dado.o: dado.h
-	$(CC) $(FLAGS) -c dado.cpp
- cls:
+	
+menu.o:
+	$(CC) $(FLAGS) -c $(MENU_PATH)/menu.cpp
+
+empresa.o:
+	$(CC) $(FLAGS) -c $(EMPRESA_PATH)/empresa.cpp
+
+funcionario.o:
+	$(CC) $(FLAGS) -c $(FUNCIONARIO_PATH)/funcionario.cpp
+
+empresa-crud.o:
+	$(CC) $(FLAGS) -c $(CRUD_PATH)/empresa-crud.cpp
+
+funcionario-crud.o:
+	$(CC) $(FLAGS) -c $(CRUD_PATH)/funcionario-crud.cpp
+
+cls:
 	rm -f $(PROG) $(OBJS)

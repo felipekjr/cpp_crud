@@ -1,4 +1,3 @@
-
 #include "funcionario-crud.h"
 
 Funcionario criarFuncionario() {

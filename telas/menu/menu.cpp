@@ -3,20 +3,23 @@
 void iniciarMenu(){
     int option;
     cout << "Bem vindo!" << endl;
-    list<Empresa> empresas;
-    list<Funcionario> funcionarios;
+    vector<Empresa> empresas;
+    vector<Funcionario> funcionarios;
     do{        
         option = escolherOpcao();       
         switch(option){
-            case 1:
+            case 1: {
                 Empresa empresa = criarEmpresa();
                 empresas.push_back(empresa);
                 break;
-            case 2:
-                Funcionario funcionario = criarFuncionario();
+            }
+                
+            case 2: {
+                Funcionario funcionario = Funcionario("felipe", 2.0, "sasa");
                 funcionarios.push_back(funcionario);
                 adicionarFuncionario(empresas, funcionario);
                 break;
+            }                
             case 3:
                 listarFuncionarios(empresas);
                 break;
@@ -28,6 +31,7 @@ void iniciarMenu(){
                 break;
             default: break;
         }
+        cout << empresas[0].getNome() << endl;
     }while(option != 0);
 }
 

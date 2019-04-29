@@ -4,15 +4,14 @@
 #include <string>
 using namespace std;
 
-class Funcionario {
+class Funcionario{
     private:
         int id;
         string nome;
         double salario;
-        date dataAdmissao;
-    public:
-        Funcionario();
-        Funcionario(string nome, double salario, date dataAdmissao);
+        string dataAdmissao;
+    public:          
+        Funcionario(string nome, double salario, string dataAdmissao);       
         ~Funcionario();
         int getId(){
             return this->id;
@@ -32,28 +31,13 @@ class Funcionario {
         void setSalario(double salario){
             this->salario = salario;
         };
-        date getDataAdmissao(){
+        string getDataAdmissao(){
             return this->dataAdmissao;
         };      
-        void setDataAdmissao(date dataAdmissao){
+        void setDataAdmissao(string dataAdmissao){
             this->dataAdmissao = dataAdmissao;
         };
        
-}
-
-Funcionario::Funcionario(){
-    this->nome = "";
-    this->salario = 0.0;
-    this->dataAdmissao = "";
-};
-
-Funcionario::Funcionario(string nome, double salario, date dataAdmissao){
-    this->nome = nome;
-    this->salario = salario;
-    this->dataAdmissao = dataAdmissao;
-};
-
-Funcionario::~Funcionario(){
 };
 
 #endif
