@@ -48,9 +48,9 @@ void aplicarAumento(list<Empresa> *empresas){
         double aumento = funcionario.getSalario() * coeficiente;
         funcionario.setSalario(funcionario.getSalario() + aumento);
     }
+    //atualiza a lista de funcionarios agora com o aumento
     for (auto &empresa: *empresas){
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-            //atualiza a lista de funcionarios agora com o aumento
             empresa.setFuncionarios(funcionarios);
         }
     }
@@ -100,3 +100,12 @@ Empresa escolherEmpresa(list<Empresa> empresas){
     } while(continuar == "S" && !empresaEscolhida.getNome().size());      
     return empresaEscolhida;
 }
+
+
+//void checarInteiro(string e){
+//    try{
+//      this->aux = std::stoi(e);
+//    } catch (const std::exception &e){
+//      this->aux = -1;
+//    }
+//}

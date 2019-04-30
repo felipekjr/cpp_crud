@@ -33,7 +33,9 @@ void iniciarMenu(){
             case 5:
                 listarMediaFuncionarios(empresas);
                 break;
-            default: break;
+            default:
+                cout << RED << "Opção inválida!" << endl;
+                break;
         }       
     }while(option != 0);    
 }
