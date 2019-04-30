@@ -47,7 +47,12 @@ void aplicarAumento(list<Empresa> *empresas){
     for (auto &funcionario : funcionarios) {
         double aumento = funcionario.getSalario() * coeficiente;
         funcionario.setSalario(funcionario.getSalario() + aumento);
-        cout << funcionario;
+    }
+    for (auto &empresa: *empresas){
+        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
+            //atualiza a lista de funcionarios agora com o aumento
+            empresa.setFuncionarios(funcionarios);
+        }
     }
 }
 

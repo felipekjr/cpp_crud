@@ -40,6 +40,10 @@ class Empresa{
         return this->funcionarios.size();
     }
 
+    void setFuncionarios(list<Funcionario> funcionarios){
+        this->funcionarios = funcionarios;
+    }
+
     void inserirFuncionario(Funcionario funcionario){
         this->funcionarios.push_back(funcionario);
     };
