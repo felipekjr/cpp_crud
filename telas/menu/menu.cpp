@@ -27,10 +27,7 @@ void iniciarMenu(){
                 listarFuncionarios(&empresas);
                 break;
             case 4:
-                aplicarAumento(&empresas);  
-                for (auto &empresa : empresas) {
-                    cout << empresa << endl;
-                }             
+                aplicarAumento(&empresas);                            
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);

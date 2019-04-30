@@ -50,6 +50,14 @@ void aplicarAumento(list<Empresa> *empresas){
                 funcionario.setSalario(25);                
             }  
         }            
+    }
+    //todo
+    for (auto empresa : *empresas) {          
+        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
+            for (auto &funcionario : empresa.getFuncionarios()) {
+                cout << "Oi" << funcionario;                
+            }  
+        }            
     }       
 }
 
