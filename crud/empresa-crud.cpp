@@ -37,37 +37,32 @@ void listarFuncionarios(list<Empresa> *empresas){
 
 void aplicarAumento(list<Empresa> *empresas){
     double entrada;
-    double aumento = 0.0;
+    double coeficiente = 0.0;
     cout <<CYAN<<"--- APLICAR AUMENTO ---"<<RESET<< endl;
     cout << "valor(%): ";
     cin >> entrada;
-    aumento = entrada / 100;
+    coeficiente = entrada / 100;
     Empresa empresaEscolhida = escolherEmpresa(*empresas);
     list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
-    for (auto &empresa : *empresas) {        
-        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-            for (auto funcionario : empresaEscolhida.getFuncionarios()) {
-                funcionario.setSalario(25);                
-            }  
-        }            
+    for (auto &funcionario : funcionarios) {
+        double aumento = funcionario.getSalario() * coeficiente;
+        funcionario.setSalario(funcionario.getSalario() + aumento);
+        cout << funcionario;
     }
-
-    for (auto &funcionario : empresaEscolhida.getFuncionarios()) {
-        cout << "Oi" << funcionario;
-    }
-
 }
 
 void listarMediaFuncionarios(list<Empresa> empresas){
     int contador = 0;
     double media = 0.0;
     double somatorio = 0.0;
+    cout << CYAN << "--- MÉDIA ---" << RESET << endl;
     for (auto empresa : empresas) {
         cout << GREEN<<empresa.getNome() << " : " << empresa.getTotalFuncionarios() << endl;
         somatorio += empresa.getTotalFuncionarios();
         contador++;
     }
     media = somatorio / contador;
+    cout << "=========" << endl;
     cout << "média: " << media << RESET << endl;
 }
 
