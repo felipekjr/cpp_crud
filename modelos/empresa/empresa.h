@@ -9,7 +9,7 @@
 using namespace std;
 class Empresa{
     private:
-    int id;
+
     string nome;
     string cnpj;
     list<Funcionario> funcionarios;
@@ -20,12 +20,6 @@ class Empresa{
     Empresa(string nome, string cnpj);    
     ~Empresa();
     //getters & setters
-    int getId(){
-        return this->id;
-    };
-    void setId(int id){
-        this->id = id;
-    };    
     string getNome() {
         return this->nome;
     };
@@ -40,7 +34,7 @@ class Empresa{
     };
     list<Funcionario> getFuncionarios() {
         return this->funcionarios;
-    }; 
+    };
 
     int getTotalFuncionarios() {
         return this->funcionarios.size();

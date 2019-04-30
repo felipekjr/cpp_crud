@@ -7,25 +7,18 @@ using namespace std;
 
 class Funcionario{
     private:
-        int id;
         string nome;
         double salario;
         string dataAdmissao;
     public:          
         Funcionario(string nome, double salario, string dataAdmissao);       
         ~Funcionario();
-        int getId(){
-            return this->id;
-        };
-        void setId(int id){
-            this->id = id;
-        };
         string getNome(){
             return this->nome;
         };
         void setNome(string nome){
             this->nome = nome;
-        };        
+        };
         double getSalario(){
             return this->salario;
         };
@@ -34,7 +27,7 @@ class Funcionario{
         };
         string getDataAdmissao(){
             return this->dataAdmissao;
-        };      
+        };
         void setDataAdmissao(string dataAdmissao){
             this->dataAdmissao = dataAdmissao;
         };
