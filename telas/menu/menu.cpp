@@ -34,7 +34,6 @@ void iniciarMenu(){
                 listarMediaFuncionarios(empresas);
                 break;
             default:
-                cout << RED << "Opção inválida!" << endl;
                 break;
         }       
     }while(option != 0);    
@@ -55,7 +54,7 @@ int escolherOpcao(){
     if (opValida){
         return op;
     } else {
-        cout << "Opção inválida!" << endl;
+        cout << RED << "Opção inválida!" << RESET<< endl;
         return -1;
     }
 }
