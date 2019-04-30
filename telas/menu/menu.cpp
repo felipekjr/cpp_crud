@@ -27,7 +27,7 @@ void iniciarMenu(){
                 listarFuncionarios(empresas);
                 break;
             case 4:
-                aplicarAumento(empresas);               
+                aplicarAumento(&empresas);               
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);
@@ -42,7 +42,7 @@ int escolherOpcao(){
     int op;
     cout <<CYAN<< "--- MENU PRINCIPAL ---"<<RESET<< endl;
     cout << "1 - criar empresa" << endl;
-    cout << "2 - adicionar funcionaro" << endl;
+    cout << "2 - adicionar funcionário" << endl;
     cout << "3 - listar funcionarios" << endl;
     cout << "4 - aplicar aumento" << endl;
     cout << "5 - listar média de funcionários" << endl;
