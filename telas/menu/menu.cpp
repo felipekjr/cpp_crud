@@ -18,7 +18,7 @@ void iniciarMenu(){
                 
             case 2: {
                 Funcionario funcionario = criarFuncionario();
-                adicionarFuncionario(empresas, funcionario);
+                adicionarFuncionario(&empresas, funcionario);
                 funcionarios.push_back(funcionario);
                 mensagemSucesso("Funcionário adicionado com sucesso!");
                 break;

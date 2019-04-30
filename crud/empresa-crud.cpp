@@ -1,40 +1,35 @@
 #include "empresa-crud.h"
 
-Empresa criarEmpresa(){
+Empresa criarEmpresa(){ 
+    cin.clear();
+    cin.sync();    
     string nome, cnpj;
     cout <<CYAN<<"--- CRIAR EMPRESA ---"<<RESET<< endl;
     cout << "- nome: ";
-    // TODO: ler espaço em branco
-    cin >> nome;
+    cin.ignore();
+    getline(cin, nome);
     cout << "- cnpj: ";
-    cin >> cnpj;
+    getline(cin, cnpj);
     Empresa empresa = Empresa(nome, cnpj);
     return empresa;
 }
 
-void adicionarFuncionario(list<Empresa> &empresas, Funcionario funcionario){      
-    Empresa empresaEscolhida = escolherEmpresa(empresas); 
-    empresaEscolhida.inserirFuncionario(funcionario);     
-    for (auto &funcionario : empresaEscolhida.getFuncionarios()) {       
-        cout << funcionario << endl;
-    }
-    for (auto &empresa : empresas) {
+void adicionarFuncionario(list<Empresa> *empresas, Funcionario funcionario){      
+    Empresa empresaEscolhida = escolherEmpresa(*empresas); 
+    empresaEscolhida.inserirFuncionario(funcionario);
+    for (auto &empresa : *empresas) {        
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-            cout << empresa;
-            // empresas.erase(empresa);
-            // empresas.insert(empresa, empresaEscolhida);            
+            empresa.inserirFuncionario(funcionario);    
         }            
     }
 }
 
-void listarFuncionarios(list<Empresa> empresas){
+void listarFuncionarios(list<Empresa> empresas){   
     Empresa empresaEscolhida = escolherEmpresa(empresas);
+     cout << CYAN << "FUNCIONÁRIOS DE " << empresaEscolhida.getNome() << endl;
     for (auto const& funcionario : empresaEscolhida.getFuncionarios()) {
         cout << funcionario << endl;          
-    }   
-    for(int i=0; i<empresaEscolhida.getTotalFuncionarios(); i++){
-        cout << "print funcionarios";
-    }
+    } 
 }
 
 void aplicarAumento(list<Empresa> &empresas){

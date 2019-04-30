@@ -1,6 +1,6 @@
 #ifndef MENU_H
 #define MENU_H
-
+#include<sstream>
 #include <iostream>
 #include <cstdlib>
 #include <set>
