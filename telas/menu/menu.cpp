@@ -27,7 +27,8 @@ void iniciarMenu(){
                 listarFuncionarios(&empresas);
                 break;
             case 4:
-                aplicarAumento(&empresas);                            
+                aplicarAumento(&empresas);
+                mensagemSucesso("Aumento aplicado com sucesso!");
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);
