@@ -10,17 +10,25 @@ void iniciarMenu(){
         switch(option){
             case 1: {
                 Empresa empresa = criarEmpresa();
-                empresas.push_back(empresa);  
-                cout << empresa;
-                mensagemSucesso("Empresa cadastrada com sucesso!");  
+                if(checarEmpresa(empresas, empresa)){
+                    empresas.push_back(empresa);
+                    cout << empresa;
+                    mensagemSucesso("Empresa cadastrada com sucesso!");
+                    break;
+                }
+                mensagemErro("Essa empresa já existe");
                 break;
             }
                 
             case 2: {
                 Funcionario funcionario = criarFuncionario();
-                adicionarFuncionario(&empresas, funcionario);
-                funcionarios.push_back(funcionario);
-                mensagemSucesso("Funcionário adicionado com sucesso!");                
+                if(checarFuncionario(empresas, funcionario)) {
+                    adicionarFuncionario(&empresas, funcionario);
+                    funcionarios.push_back(funcionario);
+                    mensagemSucesso("Funcionário adicionado com sucesso!");
+                    break;
+                }
+                mensagemErro("Funcionário já existe!");
                 break;
             }                
             case 3:
@@ -58,7 +66,27 @@ int escolherOpcao(){
         return -1;
     }
 }
-
+bool checarEmpresa(list<Empresa> empresas, Empresa empresa){
+    for(auto &e: empresas){
+        if(e.getCnpj() == empresa.getCnpj()){
+            return false;
+        }
+    }
+    return true;
+}
+bool checarFuncionario(list<Empresa> empresas , Funcionario funcionario){
+    for(auto &e: empresas){
+        for(auto &f: e.getFuncionarios()){
+            if(f.getNome() == funcionario.getNome() && f.getSalario() == funcionario.getSalario()){
+                return false;
+            }
+        }
+    }
+    return true;
+}
 void mensagemSucesso(string mensagem){
     cout << GREEN << mensagem << RESET << endl;
+}
+void mensagemErro(string mensagem){
+    cout << RED << mensagem << RESET << endl;
 }

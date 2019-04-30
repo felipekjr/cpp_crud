@@ -10,7 +10,10 @@
 
 using namespace std;
 int escolherOpcao();
+bool checarEmpresa(list<Empresa> empresas, Empresa empresa);
+bool checarFuncionario(list<Funcionario> funcionarios, Funcionario funcionario);
 void iniciarMenu();
 void mensagemSucesso(string mensagem);
+void mensagemErro(string mensagem);
 
 #endif
