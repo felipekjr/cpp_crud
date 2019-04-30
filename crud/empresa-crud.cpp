@@ -1,8 +1,6 @@
 #include "empresa-crud.h"
 
-Empresa criarEmpresa(){ 
-    cin.clear();
-    cin.sync();    
+Empresa criarEmpresa(){        
     string nome, cnpj;
     cout <<CYAN<<"--- CRIAR EMPRESA ---"<<RESET<< endl;
     cout << "- nome: ";
@@ -24,44 +22,48 @@ void adicionarFuncionario(list<Empresa> *empresas, Funcionario funcionario){
     }
 }
 
-void listarFuncionarios(list<Empresa> empresas){   
-    Empresa empresaEscolhida = escolherEmpresa(empresas);
-     cout << GREEN << "funcionários de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
-    for (auto const& funcionario : empresaEscolhida.getFuncionarios()) {
-        cout << funcionario;          
-    } 
+void listarFuncionarios(list<Empresa> *empresas){   
+    Empresa empresaEscolhida = escolherEmpresa(*empresas);
+    cout << GREEN << "funcionários de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
+    for (auto empresa : *empresas) {          
+        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
+            for (auto &funcionario : empresa.getFuncionarios()) {
+                cout << funcionario;                
+            }  
+        }            
+    }
+    cout << endl;    
 }
 
 void aplicarAumento(list<Empresa> *empresas){
     double entrada;
-    double aumento = 0.0;
-    cout <<CYAN <<"--- APLICAR AUMENTO ---"<<RESET<< endl;
+    double aumento = 0.0;    
+    Empresa empresaEscolhida = escolherEmpresa(*empresas);
+    cout <<CYAN<<"--- APLICAR AUMENTO ---"<<RESET<< endl;
     cout << "valor(%): ";
     cin >> entrada;
     aumento = entrada / 100;
-    Empresa empresaEscolhida = escolherEmpresa(*empresas);
     list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
     for (auto &empresa : *empresas) {        
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
             for (auto &funcionario : empresa.getFuncionarios()) {
-                funcionario.setSalario(25);       
+                funcionario.setSalario(25);                
             }  
         }            
-    }    
+    }       
 }
 
-void listarMediaFuncionarios(list<Empresa> empresas){
-    list<int> totalFuncionariosPorEmpresa;
+void listarMediaFuncionarios(list<Empresa> empresas){    
     int contador = 0;
     double media = 0.0;
     double somatorio = 0.0;
     for (auto &empresa : empresas) {  
+        cout << GREEN<<empresa.getNome() << " : " << empresa.getTotalFuncionarios() << endl;
         somatorio += empresa.getTotalFuncionarios();
         contador++;
-
     }
     media = somatorio / contador;
-
+    cout << "média: " << media << RESET << endl;
 }
 
 Empresa escolherEmpresa(list<Empresa> empresas){

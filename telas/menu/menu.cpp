@@ -20,14 +20,17 @@ void iniciarMenu(){
                 Funcionario funcionario = criarFuncionario();
                 adicionarFuncionario(&empresas, funcionario);
                 funcionarios.push_back(funcionario);
-                mensagemSucesso("Funcionário adicionado com sucesso!");
+                mensagemSucesso("Funcionário adicionado com sucesso!");                
                 break;
             }                
             case 3:
-                listarFuncionarios(empresas);
+                listarFuncionarios(&empresas);
                 break;
             case 4:
-                aplicarAumento(&empresas);               
+                aplicarAumento(&empresas);  
+                for (auto &empresa : empresas) {
+                    cout << empresa << endl;
+                }             
                 break;
             case 5:
                 listarMediaFuncionarios(empresas);
