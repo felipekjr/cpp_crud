@@ -40,15 +40,20 @@ void listarFuncionarios(list<Empresa> empresas){
 }
 
 void listarFuncionariosExperiencia(list<Empresa> empresas){
-    Empresa empresaEscolhida = escolherEmpresa(empresas);
-    cout << GREEN << "funcionários em treinamento de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
+    int countExp = 0;
+    Empresa empresaEscolhida = escolherEmpresa(empresas);   
     for (auto empresa : empresas) {          
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
             if (empresa.getTotalFuncionarios() > 0) {
+                cout << GREEN << "funcionários em treinamento de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
                 for (auto &funcionario : empresa.getFuncionarios()) {
                     if (checarExperiencia(funcionario)){
                         cout << funcionario;
+                        countExp++;
                     }                                   
+                }
+                if(countExp == 0) {
+                     cout << YELLOW << "Nenhum funcionário em periodo de experiência!" << RESET << endl;
                 }  
             } else {
                 cout << YELLOW << "Nenhum funcionário cadastrado!" << RESET << endl;
@@ -131,12 +136,3 @@ Empresa escolherEmpresa(list<Empresa> empresas){
     } while(continuar == "S" && !empresaEscolhida.getNome().size());      
     return empresaEscolhida;
 }
-
-
-//void checarInteiro(string e){
-//    try{
-//      this->aux = std::stoi(e);
-//    } catch (const std::exception &e){
-//      this->aux = -1;
-//    }
-//}
