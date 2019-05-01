@@ -1,3 +1,10 @@
+/**
+* @file empresa-crud.h
+* @brief Funcionalidades referentes a empresa
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef EMPRESA_CRUD_H
 #define EMPRESA_CRUD_H
 

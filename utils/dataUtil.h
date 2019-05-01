@@ -1,6 +1,12 @@
+/**
+* @file dataUtil.h
+* @brief Utilitário de Data
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef DATAUTIL_H
 #define DATAUTIL_H
-
 
 #include <ctime>
 #include <iostream>

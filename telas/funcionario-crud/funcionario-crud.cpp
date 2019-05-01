@@ -1,4 +1,16 @@
+/**
+* @file menu.h
+* @brief Menu do sistema
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #include "funcionario-crud.h"
+
+/**
+* @brief Cria um funcionario
+* @return Funcionario criado
+*/
 
 Funcionario criarFuncionario() {
     string nome, inputDate, salario;     
@@ -27,7 +39,11 @@ Funcionario criarFuncionario() {
     
 }
 
-
+/**
+* @brief Checa se um funcionario é inexperiente
+* @param Funcionario a ser checado
+* @return 1 se inexperiente, 0 se não;
+*/
 bool checarExperiencia(Funcionario funcionario){
    return diferencaDatas(funcionario.getDataAdmissao(), getTimeNow()) <= 90 ? true : false;
 }

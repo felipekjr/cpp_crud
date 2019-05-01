@@ -1,5 +1,8 @@
 #include "empresa-crud.h"
-
+/**
+* @brief Cria uma empresa
+* @return Empresa criada
+*/
 Empresa criarEmpresa(){        
     string nome, cnpj;
     cout <<CYAN<<"--- CRIAR EMPRESA ---"<<RESET<< endl;
@@ -11,7 +14,10 @@ Empresa criarEmpresa(){
     Empresa empresa = Empresa(nome, cnpj);
     return empresa;
 }
-
+/**
+* @brief Adiciona um funcionario à uma empresa já existente
+* @param Ponteiro da lista de empresas e ponteiro do funcionário a ser adicionado
+*/
 void adicionarFuncionario(list<Empresa> *empresas, Funcionario *funcionario){      
     Empresa empresaEscolhida = escolherEmpresa(*empresas); 
     empresaEscolhida.inserirFuncionario(*funcionario);
@@ -22,7 +28,10 @@ void adicionarFuncionario(list<Empresa> *empresas, Funcionario *funcionario){
         }            
     }
 }
-
+/**
+* @brief Lista todos os funcionários de uma empresa
+* @param Lista de empresas 
+*/
 void listarFuncionarios(list<Empresa> empresas){   
     Empresa empresaEscolhida = escolherEmpresa(empresas); 
     for (auto empresa : empresas) {          
@@ -38,7 +47,10 @@ void listarFuncionarios(list<Empresa> empresas){
         }            
     }  
 }
-
+/**
+* @brief Lista funcionários contratados em até 90 dias
+* @param Lista de empresas
+*/
 void listarFuncionariosExperiencia(list<Empresa> empresas){
     int countExp = 0;
     Empresa empresaEscolhida = escolherEmpresa(empresas);   
@@ -61,6 +73,10 @@ void listarFuncionariosExperiencia(list<Empresa> empresas){
         }            
     }  
 }
+/**
+* @brief Lista a quantidade de funcionarios por empresa e a média
+* @param Lista de empresas
+*/
 
 void listarMediaFuncionarios(list<Empresa> empresas){
     int contador = 0;
@@ -77,7 +93,10 @@ void listarMediaFuncionarios(list<Empresa> empresas){
     cout << "média: " << media << RESET << endl;
 }
 
-
+/**
+* @brief Aplica aumento a todos os funcionarios de uma empresa
+* @param Ponteiro da lista de empresas
+*/
 void aplicarAumento(list<Empresa> *empresas){
     string entrada;
     double coeficiente = 0.0;
@@ -106,7 +125,11 @@ void aplicarAumento(list<Empresa> *empresas){
 }
 
 
-
+/**
+* @brief Telas para escolha de empresas
+* @param Lista de empresas
+* @return Empresa escolhida
+*/
 Empresa escolherEmpresa(list<Empresa> empresas){
     string continuar;
     Empresa empresaEscolhida;

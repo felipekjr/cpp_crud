@@ -1,3 +1,10 @@
+/**
+* @file menu.h
+* @brief Menu do sistema
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef MENU_H
 #define MENU_H
 #include<sstream>

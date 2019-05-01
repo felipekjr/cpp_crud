@@ -1,3 +1,10 @@
+/**
+* @file funcionario.h
+* @brief Domínio de Funcionario
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
 

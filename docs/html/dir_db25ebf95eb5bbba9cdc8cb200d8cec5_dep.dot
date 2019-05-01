@@ -1,0 +1,11 @@
+digraph "empresa" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_847a87e7fd795717ad8c6c1af3cd90dc {
+    graph [ bgcolor="#ddddee", pencolor="black", label="modelos" fontname="Helvetica", fontsize="10", URL="dir_847a87e7fd795717ad8c6c1af3cd90dc.html"]
+  dir_db25ebf95eb5bbba9cdc8cb200d8cec5 [shape=box, label="empresa", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_db25ebf95eb5bbba9cdc8cb200d8cec5.html"];
+  }
+  dir_9f44843e5bb32dc7b83923fbd7a2a280 [shape=box label="funcionario" URL="dir_9f44843e5bb32dc7b83923fbd7a2a280.html"];
+  dir_db25ebf95eb5bbba9cdc8cb200d8cec5->dir_9f44843e5bb32dc7b83923fbd7a2a280 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000007.html"];
+}

@@ -1,3 +1,10 @@
+/**
+* @file empresa.h
+* @brief Domínio de Empresa
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef EMPRESA_H
 #define EMPRESA_H
 

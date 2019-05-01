@@ -1,5 +1,13 @@
+/**
+* @file menu.cpp
+* @brief Implementação do menu do sistema
+* @author Felipe Rodrigues
+*/
 #include "menu.h"
 
+/**
+* @brief inicializa o menu do sistema
+*/
 void iniciarMenu(){
     int option;
     cout << "Bem vindo!" << endl;    
@@ -51,7 +59,10 @@ void iniciarMenu(){
         }       
     }while(option != 0);    
 }
-
+/**
+* @brief carrega o menu de opções
+* @return valor referente a opção escolhida
+*/
 int escolherOpcao(){
     set<int> options = {0,1,2,3,4,5,6};
     string op;
@@ -75,7 +86,11 @@ int escolherOpcao(){
     return -1;    
 }
 
-
+/**
+* @brief checa se uma empresa já existe
+* @param lista de empresas já cadastradas, empresa a ser checada
+* @return 1 se já existe, 0 se não existe
+*/
 bool checarEmpresa(list<Empresa> empresas, Empresa empresa){
     for(auto &e: empresas){
         if(e.getCnpj() == empresa.getCnpj()){
@@ -84,7 +99,12 @@ bool checarEmpresa(list<Empresa> empresas, Empresa empresa){
     }
     return true;
 }
-//melhoria: checar por empresa
+/**
+* @brief checa se um funcionario já existe
+* @param lista de empresas já cadastradas, funcionario a ser checado
+* @return 1 se já existe, 0 se não existe
+* @TODO: checar por empresa
+*/
 bool checarFuncionario(list<Empresa> empresas , Funcionario funcionario){    
     for(auto &e: empresas){
         for(auto &f: e.getFuncionarios()){
@@ -96,10 +116,17 @@ bool checarFuncionario(list<Empresa> empresas , Funcionario funcionario){
     return true;
 }
 
-
+/**
+* @brief exibe mensagem de sucesso na tela
+* @param mensagem a ser exibida
+*/
 void mensagemSucesso(string mensagem){
     cout << GREEN << mensagem << RESET << endl;
 }
+/**
+* @brief exibe mensagem de erro na tela
+* @param mensagem a ser exibida
+*/
 void mensagemErro(string mensagem){
     cout << RED << mensagem << RESET << endl;
 }

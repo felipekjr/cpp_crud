@@ -1,3 +1,10 @@
+/**
+* @file funcionario-crud.h
+* @brief Funcionalidades referentes a funcionario
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef FUNCIONARIO_CRUD_H
 #define FUNCIONARIO_CRUD_H
 

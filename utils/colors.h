@@ -1,3 +1,10 @@
+/**
+* @file colors.h
+* @brief Atribui cores às constantes
+* @author Felipe Rodrigues
+* @since 23/04/2019
+* @date 01/05/2019
+*/
 #ifndef COLORS_H
 #define COLORS_H
 //the following are UBUNTU/LINUX, and MacOS ONLY terminal color codes.
