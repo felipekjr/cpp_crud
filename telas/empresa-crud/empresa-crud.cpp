@@ -24,11 +24,11 @@ void adicionarFuncionario(list<Empresa> *empresas, Funcionario *funcionario){
 }
 
 void listarFuncionarios(list<Empresa> empresas){   
-    Empresa empresaEscolhida = escolherEmpresa(empresas);
-    cout << GREEN << "funcionários de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
+    Empresa empresaEscolhida = escolherEmpresa(empresas); 
     for (auto empresa : empresas) {          
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
             if (empresa.getTotalFuncionarios() > 0) {
+                cout << GREEN << "--- FUNCIONÁRIOS DE " <<(empresaEscolhida.getNome())<<" ---"<<RESET<<endl; 
                 for (auto &funcionario : empresa.getFuncionarios()) {
                     cout << funcionario;                
                 }  

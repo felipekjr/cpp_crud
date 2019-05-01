@@ -4,9 +4,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <set>
-#include "../../crud/empresa-crud.h"
-#include "../../crud/funcionario-crud.h"
-#include "../../colors.h"
+#include "../empresa-crud/empresa-crud.h"
+#include "../funcionario-crud/funcionario-crud.h"
+#include "../../utils/colors.h"
 
 using namespace std;
 int escolherOpcao();

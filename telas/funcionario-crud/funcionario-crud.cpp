@@ -10,19 +10,12 @@ Funcionario criarFuncionario() {
     cout << "- salário: ";
     cin >> salario;
     cout << "- data de admissão (dd-mm-yyyy): ";
-    cin >> dataAdmissao; 
-    // Date dataAdmissao = Date(dia, mes, ano);
-    Funcionario funcionario = Funcionario(nome, salario, dataAdmissao);
-    cout << funcionario;
+    cin >> dataAdmissao;
+    Funcionario funcionario = Funcionario(nome, salario, dataAdmissao);   
     return funcionario;
 }
-tm stringToTime(string s){
-    const char *time_details = s.c_str();
-    struct tm tm;
-    strptime(time_details, "%H-%M-%S", &tm);   
-    cout << mktime(&tm) << "-" << tm.tm_mday; 
-    return tm;;
-}
+
+
 bool checarExperiencia(Funcionario funcionario){
    
 }

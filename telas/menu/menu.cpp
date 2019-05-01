@@ -16,7 +16,7 @@ void iniciarMenu(){
                     mensagemSucesso("Empresa cadastrada com sucesso!");
                     break;
                 }
-                mensagemErro("Essa empresa já existe");
+                mensagemErro("Já existe empresa com este cnpj.");
                 break;
             }
                 
@@ -25,7 +25,9 @@ void iniciarMenu(){
                 if(checarFuncionario(empresas, funcionario)) {
                     adicionarFuncionario(&empresas, &funcionario);
                     funcionarios.push_back(funcionario);
-                    mensagemSucesso("Funcionário adicionado com sucesso!");
+                    if(!funcionario.getNomeEmpresa().empty()){
+                          mensagemSucesso("Funcionário adicionado com sucesso!");
+                    }                  
                     break;
                 }
                 mensagemErro("Já existe um funcionário com esse nome!");
