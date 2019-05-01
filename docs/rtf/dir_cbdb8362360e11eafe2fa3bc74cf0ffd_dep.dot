@@ -1,8 +1,0 @@
-digraph "utils" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_cbdb8362360e11eafe2fa3bc74cf0ffd [shape=box, label="utils", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_cbdb8362360e11eafe2fa3bc74cf0ffd.html"];
-  dir_847a87e7fd795717ad8c6c1af3cd90dc [shape=box label="modelos" fillcolor="white" style="filled" color="red" URL="dir_847a87e7fd795717ad8c6c1af3cd90dc.html"];
-  dir_cbdb8362360e11eafe2fa3bc74cf0ffd->dir_847a87e7fd795717ad8c6c1af3cd90dc [headlabel="1", labeldistance=1.5 headhref="dir_000000_000001.html"];
-}
