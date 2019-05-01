@@ -54,7 +54,7 @@ void iniciarMenu(){
 
 int escolherOpcao(){
     set<int> options = {0,1,2,3,4,5,6};
-    int op;
+    string op;
     cout <<CYAN<< "--- MENU PRINCIPAL ---"<<RESET<< endl;
     cout << "1 - criar empresa" << endl;
     cout << "2 - adicionar funcionário" << endl;
@@ -64,14 +64,18 @@ int escolherOpcao(){
     cout << "6 - aplicar aumento" << endl;
     cout << "0 - sair"<<endl;
     cin >> op;
-    const bool opValida = options.find(op) != options.end();
-    if (opValida){
-        return op;
-    } else {
-        cout << RED << "Opção inválida!" << RESET<< endl;
-        return -1;
-    }
+   
+    if(isInt(op)){
+        const bool opValida = options.find(stoi(op)) != options.end();
+        if(opValida){           
+            return stoi(op);            
+        }            
+    } 
+    cout << RED << "Opção inválida!" << RESET<< endl;
+    return -1;    
 }
+
+
 bool checarEmpresa(list<Empresa> empresas, Empresa empresa){
     for(auto &e: empresas){
         if(e.getCnpj() == empresa.getCnpj()){

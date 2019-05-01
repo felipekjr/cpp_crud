@@ -21,8 +21,8 @@ all:
 main.o:
 	$(CC) $(FLAGS) -c main.cpp
 	
-menu.o:
-	$(CC) $(FLAGS) -c $(TELAS_PATH)/menu.cpp
+menu.o: stringUtil.o
+	$(CC) $(FLAGS) -c $(MENU_PATH)/menu.cpp
 
 empresa.o:
 	$(CC) $(FLAGS) -c $(EMPRESA_PATH)/empresa.cpp
@@ -39,7 +39,7 @@ empresa-crud.o:
 funcionario-crud.o:
 	$(CC) $(FLAGS) -c $(FUNCIONARIO-CRUD_PATH)/funcionario-crud.cpp
 
-dataUtil.o:
+dataUtil.o: data.o
 	$(CC) $(FLAGS) -c $(UTILS_PATH)/dataUtil.cpp
 
 stringUtil.o:

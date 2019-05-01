@@ -6,6 +6,7 @@
 #include <set>
 #include "../empresa-crud/empresa-crud.h"
 #include "../funcionario-crud/funcionario-crud.h"
+#include "../../utils/stringUtil.h"
 #include "../../utils/colors.h"
 
 using namespace std;

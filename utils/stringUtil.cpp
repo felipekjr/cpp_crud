@@ -13,7 +13,13 @@ std::vector<std::string> splitString(std::string s, std::string separador){
     return strings;
 }
 
-bool isNumber(const std::string& s){  
+bool isInt(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+bool isDouble(std::string s){      
     try {
         std::stod(s);
     }
@@ -24,3 +30,4 @@ bool isNumber(const std::string& s){
     return true;
 
 }
+
