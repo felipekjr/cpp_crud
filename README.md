@@ -2,7 +2,7 @@
 Pequeno crud de empresas feito para a disciplina da LP.1
 Para rodar, digite na raiz do projeto:
 ```
-makefile
+make
 ```
 ### Tecnologias:
   * C++11, MakeFile, Doxygen
