@@ -46,10 +46,9 @@ void listarFuncionariosExperiencia(list<Empresa> empresas){
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
             if (empresa.getTotalFuncionarios() > 0) {
                 for (auto &funcionario : empresa.getFuncionarios()) {
-                    // if (funcionario.checarExperiencia()){
-                    //     cout << funcionario;
-                    // }
-                                   
+                    if (checarExperiencia(funcionario)){
+                        cout << funcionario;
+                    }                                   
                 }  
             } else {
                 cout << YELLOW << "Nenhum funcionário cadastrado!" << RESET << endl;
@@ -75,30 +74,31 @@ void listarMediaFuncionarios(list<Empresa> empresas){
 
 
 void aplicarAumento(list<Empresa> *empresas){
-    double entrada;
+    string entrada;
     double coeficiente = 0.0;
     cout <<CYAN<<"--- APLICAR AUMENTO ---"<<RESET<< endl;
     cout << "valor(%): ";
     cin >> entrada;
-    coeficiente = entrada / 100;
-    Empresa empresaEscolhida = escolherEmpresa(*empresas);
-    list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
-    for (auto &funcionario : funcionarios) {
-        double aumento = funcionario.getSalario() * coeficiente;
-        funcionario.setSalario(funcionario.getSalario() + aumento);
-    }
-    //atualiza a lista de funcionarios agora com o aumento
-    for (auto &empresa: *empresas){
-        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-            empresa.setFuncionarios(funcionarios);
+    if(isDouble(entrada)){
+        coeficiente = stod(entrada) / 100;
+        Empresa empresaEscolhida = escolherEmpresa(*empresas);
+        list<Funcionario> funcionarios = empresaEscolhida.getFuncionarios();
+        for (auto &funcionario : funcionarios) {
+            double aumento = funcionario.getSalario() * coeficiente;
+            funcionario.setSalario(funcionario.getSalario() + aumento);
         }
+        //atualiza a lista de funcionarios agora com o aumento
+        for (auto &empresa: *empresas){
+            if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
+                empresa.setFuncionarios(funcionarios);
+            }
+        }
+    } else {
+        cout << RED << "Valor inválido!" << RESET << endl;
+        throw std::exception();
     }
+   
 }
-
-
-
-
-
 
 
 

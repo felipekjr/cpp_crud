@@ -19,12 +19,13 @@ bool isInt(const std::string& s)
     while (it != s.end() && std::isdigit(*it)) ++it;
     return !s.empty() && it == s.end();
 }
+
 bool isDouble(std::string s){      
     try {
         std::stod(s);
     }
     catch(...)
-    {
+    {       
         return false;
     }
     return true;

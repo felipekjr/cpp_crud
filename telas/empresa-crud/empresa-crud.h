@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cctype>
 #include "../../modelos/empresa/empresa.h"
+#include "../funcionario-crud/funcionario-crud.h"
 #include "../../utils/colors.h"
 using namespace std;
 

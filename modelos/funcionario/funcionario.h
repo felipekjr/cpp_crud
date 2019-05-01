@@ -3,16 +3,19 @@
 
 #include <iostream>
 #include <string>
+#include "../data/data.h"
+#include "../../utils/dataUtil.h"
 using namespace std;
 
 class Funcionario{
     private:
         string nome;
         double salario;
-        string dataAdmissao;
+        Data dataAdmissao;
         string nomeEmpresa;
     public:          
-        Funcionario(string nome, double salario, string dataAdmissao);       
+        Funcionario();
+        Funcionario(string nome, double salario, Data dataAdmissao);       
         ~Funcionario();
         string getNome(){
             return this->nome;
@@ -26,10 +29,10 @@ class Funcionario{
         void setSalario(double salario){
             this->salario = salario;
         };
-        string getDataAdmissao(){            
+        Data getDataAdmissao(){            
             return this->dataAdmissao;
         };
-        void setDataAdmissao(string dataAdmissao){
+        void setDataAdmissao(Data dataAdmissao){
             this->dataAdmissao = dataAdmissao;
         };
         string getNomeEmpresa(){

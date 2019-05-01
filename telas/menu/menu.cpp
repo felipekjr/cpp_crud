@@ -21,7 +21,7 @@ void iniciarMenu(){
             }
                 
             case 2: {
-                Funcionario funcionario = criarFuncionario();
+                Funcionario funcionario = criarFuncionario();               
                 if(checarFuncionario(empresas, funcionario)) {
                     adicionarFuncionario(&empresas, &funcionario);
                     funcionarios.push_back(funcionario);

@@ -27,7 +27,7 @@ menu.o: stringUtil.o
 empresa.o:
 	$(CC) $(FLAGS) -c $(EMPRESA_PATH)/empresa.cpp
 
-funcionario.o:
+funcionario.o: data.o
 	$(CC) $(FLAGS) -c $(FUNCIONARIO_PATH)/funcionario.cpp
 	
 data.o:
@@ -36,7 +36,7 @@ data.o:
 empresa-crud.o:
 	$(CC) $(FLAGS) -c $(EMPRESA-CRUD_PATH)/empresa-crud.cpp
 
-funcionario-crud.o:
+funcionario-crud.o: funcionario.o data.o
 	$(CC) $(FLAGS) -c $(FUNCIONARIO-CRUD_PATH)/funcionario-crud.cpp
 
 dataUtil.o: data.o

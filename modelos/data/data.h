@@ -2,6 +2,7 @@
 #define DATA_H
 
 #include <iostream>
+
 using namespace std;
 
 class Data{
@@ -32,7 +33,8 @@ class Data{
     };
     void setAno(int ano){
         this->ano = ano;
-    }
+    };
+    
 
     Data& operator= (Data const &f);
     friend ostream& operator<< (ostream &o, Data const d);
