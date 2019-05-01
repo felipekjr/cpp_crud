@@ -24,7 +24,3 @@ bool isNumber(const std::string& s){
     return true;
 
 }
-
-int main(){
-    std::cout << (02 > 1);
-}
