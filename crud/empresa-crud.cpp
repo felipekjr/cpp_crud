@@ -12,28 +12,67 @@ Empresa criarEmpresa(){
     return empresa;
 }
 
-void adicionarFuncionario(list<Empresa> *empresas, Funcionario funcionario){      
+void adicionarFuncionario(list<Empresa> *empresas, Funcionario *funcionario){      
     Empresa empresaEscolhida = escolherEmpresa(*empresas); 
-    empresaEscolhida.inserirFuncionario(funcionario);
+    empresaEscolhida.inserirFuncionario(*funcionario);
     for (auto &empresa : *empresas) {        
-        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){
-            empresa.inserirFuncionario(funcionario);    
+        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){             
+            funcionario->setNomeEmpresa(empresa.getNome());
+            empresa.inserirFuncionario(*funcionario);   
         }            
     }
 }
 
-void listarFuncionarios(list<Empresa> *empresas){   
-    Empresa empresaEscolhida = escolherEmpresa(*empresas);
+void listarFuncionarios(list<Empresa> empresas){   
+    Empresa empresaEscolhida = escolherEmpresa(empresas);
     cout << GREEN << "funcionários de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
-    for (auto empresa : *empresas) {          
+    for (auto empresa : empresas) {          
         if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
-            for (auto &funcionario : empresa.getFuncionarios()) {
-                cout << funcionario;                
-            }  
+            if (empresa.getTotalFuncionarios() > 0) {
+                for (auto &funcionario : empresa.getFuncionarios()) {
+                    cout << funcionario;                
+                }  
+            } else {
+                cout << YELLOW << "Nenhum funcionário cadastrado!" << RESET << endl;
+            }            
         }            
-    }
-    cout << endl;    
+    }  
 }
+
+void listarFuncionariosExperiencia(list<Empresa> empresas){
+    Empresa empresaEscolhida = escolherEmpresa(empresas);
+    cout << GREEN << "funcionários em treinamento de " <<(empresaEscolhida.getNome()) <<RESET<<endl;
+    for (auto empresa : empresas) {          
+        if(empresa.getCnpj() == empresaEscolhida.getCnpj()){ 
+            if (empresa.getTotalFuncionarios() > 0) {
+                for (auto &funcionario : empresa.getFuncionarios()) {
+                    // if (funcionario.checarExperiencia()){
+                    //     cout << funcionario;
+                    // }
+                                   
+                }  
+            } else {
+                cout << YELLOW << "Nenhum funcionário cadastrado!" << RESET << endl;
+            }            
+        }            
+    }  
+}
+
+void listarMediaFuncionarios(list<Empresa> empresas){
+    int contador = 0;
+    double media = 0.0;
+    double somatorio = 0.0;
+    cout << CYAN << "--- MÉDIA ---" << RESET << endl;
+    for (auto empresa : empresas) {
+        cout << GREEN<<empresa.getNome() << " : " << empresa.getTotalFuncionarios() << endl;
+        somatorio += empresa.getTotalFuncionarios();
+        contador++;
+    }
+    media = somatorio / contador;
+    cout << "=========" << endl;
+    cout << "média: " << media << RESET << endl;
+}
+
 
 void aplicarAumento(list<Empresa> *empresas){
     double entrada;
@@ -56,20 +95,12 @@ void aplicarAumento(list<Empresa> *empresas){
     }
 }
 
-void listarMediaFuncionarios(list<Empresa> empresas){
-    int contador = 0;
-    double media = 0.0;
-    double somatorio = 0.0;
-    cout << CYAN << "--- MÉDIA ---" << RESET << endl;
-    for (auto empresa : empresas) {
-        cout << GREEN<<empresa.getNome() << " : " << empresa.getTotalFuncionarios() << endl;
-        somatorio += empresa.getTotalFuncionarios();
-        contador++;
-    }
-    media = somatorio / contador;
-    cout << "=========" << endl;
-    cout << "média: " << media << RESET << endl;
-}
+
+
+
+
+
+
 
 Empresa escolherEmpresa(list<Empresa> empresas){
     string continuar;
@@ -79,7 +110,7 @@ Empresa escolherEmpresa(list<Empresa> empresas){
         cout << CYAN<< "--- SELECIONE A EMPRESA ---"<<RESET<< endl;     
         if(empresas.size() == 0){
             cout << YELLOW << "Nenhuma empresa cadastrada!" << RESET << endl;
-            continuar = "N";
+            continuar = "N";           
         } else {
             for (auto & empresa : empresas) {
                 cout << empresa;

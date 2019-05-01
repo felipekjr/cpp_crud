@@ -10,6 +10,7 @@ class Funcionario{
         string nome;
         double salario;
         string dataAdmissao;
+        string nomeEmpresa;
     public:          
         Funcionario(string nome, double salario, string dataAdmissao);       
         ~Funcionario();
@@ -25,12 +26,18 @@ class Funcionario{
         void setSalario(double salario){
             this->salario = salario;
         };
-        string getDataAdmissao(){
+        string getDataAdmissao(){            
             return this->dataAdmissao;
         };
         void setDataAdmissao(string dataAdmissao){
             this->dataAdmissao = dataAdmissao;
         };
+        string getNomeEmpresa(){
+            return this->nomeEmpresa;
+        }
+        void setNomeEmpresa(string nomeEmpresa){
+            this->nomeEmpresa = nomeEmpresa;
+        }        
 
         //sobrecarga de operadores:
         Funcionario& operator= (Funcionario const &f);

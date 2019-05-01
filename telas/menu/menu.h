@@ -11,7 +11,7 @@
 using namespace std;
 int escolherOpcao();
 bool checarEmpresa(list<Empresa> empresas, Empresa empresa);
-bool checarFuncionario(list<Funcionario> funcionarios, Funcionario funcionario);
+bool checarFuncionario(list<Empresa> empresas, Funcionario funcionario);
 void iniciarMenu();
 void mensagemSucesso(string mensagem);
 void mensagemErro(string mensagem);

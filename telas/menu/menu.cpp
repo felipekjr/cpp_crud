@@ -2,7 +2,7 @@
 
 void iniciarMenu(){
     int option;
-    cout << "Bem vindo!" << endl;
+    cout << "Bem vindo!" << endl;    
     list<Empresa> empresas;
     list<Funcionario> funcionarios;
     do{        
@@ -23,23 +23,26 @@ void iniciarMenu(){
             case 2: {
                 Funcionario funcionario = criarFuncionario();
                 if(checarFuncionario(empresas, funcionario)) {
-                    adicionarFuncionario(&empresas, funcionario);
+                    adicionarFuncionario(&empresas, &funcionario);
                     funcionarios.push_back(funcionario);
                     mensagemSucesso("Funcionário adicionado com sucesso!");
                     break;
                 }
-                mensagemErro("Funcionário já existe!");
+                mensagemErro("Já existe um funcionário com esse nome!");
                 break;
             }                
             case 3:
-                listarFuncionarios(&empresas);
-                break;
-            case 4:
-                aplicarAumento(&empresas);
-                mensagemSucesso("Aumento aplicado com sucesso!");
-                break;
+                listarFuncionarios(empresas);
+                break;  
+             case 4:
+                listarFuncionariosExperiencia(empresas);
+                break;            
             case 5:
                 listarMediaFuncionarios(empresas);
+                break;
+            case 6:
+                aplicarAumento(&empresas);
+                mensagemSucesso("Aumento aplicado com sucesso!");
                 break;
             default:
                 break;
@@ -53,9 +56,10 @@ int escolherOpcao(){
     cout <<CYAN<< "--- MENU PRINCIPAL ---"<<RESET<< endl;
     cout << "1 - criar empresa" << endl;
     cout << "2 - adicionar funcionário" << endl;
-    cout << "3 - listar funcionarios" << endl;
-    cout << "4 - aplicar aumento" << endl;
+    cout << "3 - listar funcionarios" << endl;    
+    cout << "4 - listar funcionarios em experiencia" << endl;
     cout << "5 - listar média de funcionários" << endl;
+    cout << "6 - aplicar aumento" << endl;
     cout << "0 - sair"<<endl;
     cin >> op;
     const bool opValida = options.find(op) != options.end();
@@ -74,16 +78,19 @@ bool checarEmpresa(list<Empresa> empresas, Empresa empresa){
     }
     return true;
 }
-bool checarFuncionario(list<Empresa> empresas , Funcionario funcionario){
+//melhoria: checar por empresa
+bool checarFuncionario(list<Empresa> empresas , Funcionario funcionario){    
     for(auto &e: empresas){
         for(auto &f: e.getFuncionarios()){
-            if(f.getNome() == funcionario.getNome() && f.getSalario() == funcionario.getSalario()){
+            if(f.getNome() == funcionario.getNome() && f.getNomeEmpresa() == e.getNome()){
                 return false;
             }
         }
     }
     return true;
 }
+
+
 void mensagemSucesso(string mensagem){
     cout << GREEN << mensagem << RESET << endl;
 }

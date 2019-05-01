@@ -13,7 +13,7 @@ Funcionario& Funcionario::operator= (Funcionario const &f){
 }
 
 ostream& operator<< (ostream &o, Funcionario const f) {
-o << "nome: " << f.nome << " | salario : " << f.salario << " | contratado em: "<<f.dataAdmissao<< endl;
+o << "nome: " << f.nome << " | salario : " << f.salario << " | contratado em: "<< f.dataAdmissao << " por " << f.nomeEmpresa << endl;
 return o;
 }
 

@@ -7,7 +7,7 @@ EMPRESA_PATH = ./modelos/empresa
 FUNCIONARIO_PATH = ./modelos/funcionario
 CRUD_PATH = ./crud
 
-$(PROG):$(OBJS)
+$(PROG):$(OBJS)				
 		$(CC) -o $(PROG) $(OBJS)
 		rm -f *.o
 		./$(PROG)

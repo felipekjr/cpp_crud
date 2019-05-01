@@ -4,8 +4,12 @@
 #include <iostream>
 #include "../modelos/funcionario/funcionario.h"
 #include "../colors.h"
+#include <time.h>  
+#include <stdio.h>
+#include <string>
 using namespace std;
 Funcionario criarFuncionario();
-
+bool checarExperiencia(Funcionario funcionario);
+tm stringToTime(string s);
 #endif
 
