@@ -1,5 +1,9 @@
 # CRUD feito em c++
 Pequeno crud de empresas feito para a disciplina da LP.1
+Para rodar, digite na raiz do projeto:
+```
+makefile
+```
 ### Tecnologias:
   * C++11, MakeFile, Doxygen
 ### O que aprendi:
