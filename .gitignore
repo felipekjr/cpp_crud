@@ -1,5 +1,6 @@
 .vscode/*
 .idea/*
+cpp_crud
 # Prerequisites
 *.d
 
