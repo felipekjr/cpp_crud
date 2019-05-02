@@ -19,3 +19,9 @@ E confira em:
 ```
 cpp_crud/docs/html/index.html
 ```
+
+### TODO Tasks:
+- [ ] Checar se string de data está no formato (dd/mm/yyyy)
+- [ ] Retirar exceções de erro substituindo por um controle de fluxo adequado
+- [ ] Criar funções de atualizar e deletar funcionários
+- [ ] Criar funções de atualizar e deletar empresas
