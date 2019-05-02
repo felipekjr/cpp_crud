@@ -21,9 +21,8 @@ Data stringToData(string dataString){
         Data data = Data(stoi(dataSplitted[0]), stoi(dataSplitted[1]),stoi(dataSplitted[2]));
         return data;
     }else {       
-        throw std::exception();
-    }
-   
+        return Data();
+    }   
 }
 
 /**
@@ -32,11 +31,10 @@ Data stringToData(string dataString){
 * @return 1 se verdadeiro, 0 se falso
 */
 bool checarFormatoData(string dataString){
-    // tm_year = year - 1900 (may be negative)
-    // tm_mon  = month - 1
-    // tm_mday = day of the month
-    
-    return true;
+    struct tm tm;
+    if (strptime(dataString.c_str(), "%d/%m/%Y", &tm))       
+        return true;
+    return false;
 }
 /**
 * @brief retorna a data atual
@@ -79,3 +77,4 @@ double diferencaDatas(Data data, tm* dataAtual){
     // cout <<  valorDataAtual - valorData; 
     return valorDataAtual - valorData;
 }
+

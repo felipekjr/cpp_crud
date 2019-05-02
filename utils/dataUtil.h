@@ -12,6 +12,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <regex>
 #include "stringUtil.h"
 #include "../modelos/data/data.h"
 using namespace std;
