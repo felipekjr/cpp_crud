@@ -1,5 +1,5 @@
 # CRUD feito em c++
-Pequeno crud de empresas feito para a disciplina da LP.1
+CRUD de empresas feito para a disciplina da LP.1
 Para rodar, digite na raiz do projeto:
 ```
 make
@@ -20,7 +20,7 @@ E confira em:
 cpp_crud/docs/html/index.html
 ```
 
-### TODO Tasks:
+### ToDo Tasks:
 - [ ] Checar se string de data está no formato (dd/mm/yyyy)
 - [ ] Retirar exceções de erro substituindo por um controle de fluxo adequado
 - [ ] Criar funções de atualizar e deletar funcionários
