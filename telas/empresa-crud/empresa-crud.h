@@ -13,6 +13,7 @@
 #include "../../modelos/empresa/empresa.h"
 #include "../funcionario-crud/funcionario-crud.h"
 #include "../../utils/colors.h"
+#include "../../utils/stringUtil.h"
 using namespace std;
 
 Empresa criarEmpresa();

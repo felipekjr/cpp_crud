@@ -3,16 +3,25 @@
 * @brief Cria uma empresa
 * @return Empresa criada
 */
-Empresa criarEmpresa(){        
-    string nome, cnpj;
-    cout <<CYAN<<"--- CRIAR EMPRESA ---"<<RESET<< endl;
-    cout << "- nome: ";
-    cin.ignore();
-    getline(cin, nome);
-    cout << "- cnpj: ";
-    getline(cin, cnpj);
-    Empresa empresa = Empresa(nome, cnpj);
-    return empresa;
+Empresa criarEmpresa(){   
+    string nome, cnpj;  
+    Empresa empresa;  
+    bool inputVazio;
+    do {
+        inputVazio = false;
+        cout <<CYAN<<"--- CRIAR EMPRESA ---"<<RESET<< endl;
+        cout << "- nome: ";
+        cin.ignore();
+        getline(cin, nome);
+        cout << "- cnpj: ";
+        getline(cin, cnpj);    
+        if(isEmpty(nome) || isEmpty(cnpj)) {
+            inputVazio = true;
+            cout << YELLOW << "Nome ou CNPJ vazios!" << RESET << endl;
+        }  
+    } while(inputVazio);
+    empresa = Empresa(nome, cnpj);
+    return empresa;   
 }
 /**
 * @brief Adiciona um funcionario à uma empresa já existente
@@ -143,11 +152,11 @@ Empresa escolherEmpresa(list<Empresa> empresas){
             for (auto & empresa : empresas) {
                 cout << empresa;
             }
-            cout << "empresa: ";
+            cout << "empresa (cnpj): ";
             cin.ignore();
             getline(cin, escolha);
             for (auto & empresa : empresas) {
-                if(empresa.getNome() == escolha || empresa.getCnpj() == escolha){
+                if(empresa.getCnpj() == escolha){
                     empresaEscolhida = empresa;
                 }            
             }               

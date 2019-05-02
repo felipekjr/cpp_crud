@@ -52,4 +52,15 @@ bool isDouble(std::string s){
     return true;
 
 }
+/**
+* @brief checa se uma string está vazia
+* @param string
+* @return 1 se vazia, 0 se não
+*/
+bool isEmpty(std:: string s){    
+    if (s.empty() || s.size() == 0 || !s.size() || s.find_first_not_of(' ') == std::string::npos){    
+        return true;
+    }
+    return false;
+}
 
