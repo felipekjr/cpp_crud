@@ -18,6 +18,7 @@ Funcionario criarFuncionario() {
     Funcionario funcionario;
     bool invalidInput;
     do {
+        invalidInput = false;
         cout << CYAN<<"--- FUNCIONÁRIO ---"<<RESET<< endl;
         cout << "- nome: ";
         cin.ignore();
@@ -29,23 +30,21 @@ Funcionario criarFuncionario() {
             cin >> inputDate;   
             dataAdmissao = stringToData(inputDate);
             if(checarDataValida(dataAdmissao)){
+                 funcionario = Funcionario(nome, stod(salario), dataAdmissao);   
             } else {
                 cout << RED << "Data inválida!" << RESET << endl;
-                throw std::exception();    
+                invalidInput = true;
             }  
         } else {  
             cout << RED << "Salário inválido!" << RESET << endl;
-            throw std::exception(); 
+            invalidInput = true;
         }  
         if(isEmpty(nome)){
             invalidInput = true;
             cout << YELLOW << "Nenhum campo pode ser vazio!" << RESET << endl;
         }
-    }while(invalidInput);
-    funcionario = Funcionario(nome, stod(salario), dataAdmissao);   
+    }while(invalidInput);   
     return funcionario;
-     
-    
 }
 
 /**

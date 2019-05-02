@@ -22,6 +22,7 @@ cpp_crud/docs/html/index.html
 
 ### ToDo Tasks:
 - [x] Checar se string de data está no formato (dd/mm/yyyy)
-- [ ] Retirar exceções de erro substituindo por um controle de fluxo adequado
+- [x] Retirar exceções de erro substituindo por um controle de fluxo adequado em funcionario
+- [ ] Retirar exceções de erro substituindo por um controle de fluxo adequado em empresa
 - [ ] Criar funções de atualizar e deletar funcionários
 - [ ] Criar funções de atualizar e deletar empresas
