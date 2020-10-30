@@ -1,4 +1,4 @@
-# CRUD feito em c++
+# CRUD feito em C++
 CRUD de empresas feito para a disciplina da LP.1
 Para rodar, digite na raiz do projeto:
 ```
